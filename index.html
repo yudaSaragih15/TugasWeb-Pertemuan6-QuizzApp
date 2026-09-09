@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Interactive Quiz App</title>
+    <!-- Import Font Pixel Retro -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap" rel="stylesheet">
+    <!-- Hubungkan file CSS -->
+    <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+
+    <!-- CONTAINER UTAMA arcade SCREEN -->
+    <div class="app-container" id="app">
+        <!-- HEADER BAR MERAH arcade -->
+        <div class="quiz-header">
+            <div class="quiz-title-box">
+                <span class="arcade-icon">🕹️</span>
+                <span class="quiz-title">PIXEL PULSE QUIZ</span>
+            </div>
+            <div class="header-actions">
+                <button class="btn-start-quiz">Start Quiz</button>
+                <span class="high-score-badge" id="highScoreBadge">🏆 0</span>
+                <button class="dark-toggle" id="darkToggle" aria-label="Toggle dark mode">🌙</button>
+            </div>
+        </div>
+
+        <!-- AREA MAIN GAMEPLAY (GRID DENGAN LEADERBOARD) -->
+        <div class="main-layout">
+            
+            <div class="game-content">
+                <!-- LOGO DITENGAH BANNER -->
+                <h1 class="pixel-main-title">PIXEL PULSE QUIZ</h1>
+
+                <!-- PROGRESS BAR -->
+                <div class="progress-wrapper">
+                    <div class="progress-fill" id="progressFill"></div>
+                </div>
+
+                <!-- QUESTION SECTION -->
+                <div class="question-section slide-in" id="questionSection">
+                    <div class="question-meta">
+                        <span id="questionCounter">Soal 1 / 10</span>
+                        <span id="categoryLabel">Kategori: Umum</span>
+                    </div>
+                    <div class="question-text" id="questionText">Loading soal...</div>
+                    <div class="options-container" id="optionsContainer">
+                        <!-- Opsi akan di-render oleh JS -->
+                    </div>
+                    <div class="quiz-footer">
+                        <div class="timer-box" id="timerBox">
+                            <span class="timer-icon">⏳</span>
+                            <span id="timerDisplay">15</span>s
+                        </div>
+                        <button class="btn btn-outline" id="nextBtn" disabled>Selanjutnya →</button>
+                    </div>
+                </div>
+
+                <!-- RESULT SCREEN -->
+                <div class="result-screen" id="resultScreen">
+                    <h2 style="margin-bottom: 0.5rem;">🎉 Selesai!</h2>
+                    <div class="result-score" id="finalScore">0</div>
+                    <div class="result-detail" id="resultDetail">Jawaban benar: 0 dari 10</div>
+                    <div class="result-actions">
+                        <button class="btn" id="restartBtn">🔄 Ulangi Quiz</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- LEADERBOARD SIDEBAR (DESAIN PERSIS GAMBAR) -->
+            <aside class="leaderboard-box">
+                <h3>Leaderboard - High Scores</h3>
+                <ul class="leaderboard-list">
+                    <li>
+                        <span class="avatar avatar-1">👤</span>
+                        <div class="player-info">
+                            <span class="p-name">Avatar</span>
+                            <span class="p-score">1200 pts</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="avatar avatar-2">👤</span>
+                        <div class="player-info">
+                            <span class="p-name">Benger</span>
+                            <span class="p-score">1150 pts</span>
+                        </div>
+                    </li>
+                    <li>
+                        <span class="avatar avatar-3">👤</span>
+                        <div class="player-info">
+                            <span class="p-name">John</span>
+                            <span class="p-score">1150 pts</span>
+                        </div>
+                    </li>
+                </ul>
+            </aside>
+        </div>
+
+        <!-- FOOTER ARCADE -->
+        <footer class="arcade-footer">
+            <div class="footer-links">
+                <a href="#">About</a>
+                <a href="#">Contact</a>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div class="copyright">© 2024 QUIZLAND</div>
+            <div class="arcade-clock">10:00</div>
+        </footer>
+
+    </div>
+
+    <!-- Hubungkan file JavaScript (defer agar dijalankan setelah HTML selesai diproses) -->
+    <script src="script.js" defer></script>
+</body>
+</html>
